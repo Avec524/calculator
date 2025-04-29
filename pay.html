@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Разблокируй все режимы калькулятора</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .payment-widget-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            width: 100%;
+            max-width: 500px;
+        }
+        .payment-widget-container iframe {
+            width: 100%;
+            max-width: 500px;
+            height: 480px;
+        }
+        @media (max-width: 600px) {
+            .payment-widget-container iframe {
+                width: 100%;
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="light-background">
+        <h2>Разблокируй все режимы калькулятора всего за 100 ₽!</h2>
+        <div class="payment-widget-container">
+            <iframe src="https://yoomoney.ru/quickpay/fundraise/widget?billNumber=19SJDBQ5L5C.250427&" 
+                    width="500" 
+                    height="480" 
+                    frameborder="0" 
+                    allowtransparency="true" 
+                    scrolling="no"></iframe>
+        </div>
+        <p>После оплаты вы будете перенаправлены автоматически</p>
+        <button class="payment-button" id="paymentInitiateButton">Оформить оплату</button>
+    </div>
+    <script>
+        document.getElementById('paymentInitiateButton').addEventListener('click', function() {
+            // Пользователь взаимодействует с iframe для оплаты
+            // Перенаправление через 15 секунд после нажатия кнопки
+            setTimeout(function() {
+                window.location.href = 'calculator.html';
+            }, 15000); // 15 секунд для завершения оплаты
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
