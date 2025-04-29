@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Разблокируй все режимы калькулятора</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="light-background">
+        <h2>Разблокируй все режимы калькулятора всего за 100 ₽!</h2>
+        <a href="https://yoomoney.ru/fundraise/19SJDBQ5L5C.250427" class="payment-button" target="_blank" id="paymentButton">Оплатить 100 ₽</a>
+        <p>После оплаты вы будете перенаправлены автоматически</p>
+    </div>
+    <script>
+        document.getElementById('paymentButton').addEventListener('click', function() {
+            // Перенаправление на страницу оплаты происходит через атрибут href
+            // После оплаты (предполагается, что пользователь вернется или останется на странице)
+            setTimeout(function() {
+                window.location.href = 'calculator.html';
+            }, 15000); // 15 секунд для завершения оплаты
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
